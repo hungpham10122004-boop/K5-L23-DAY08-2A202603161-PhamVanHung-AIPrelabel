@@ -6,16 +6,15 @@
 
 | Lớp | Model + cỡ | Ngưỡng | Vì sao (dẫn `run_id` trong `model_log.csv`) |
 |---|---|---|---|
-| person / bicycle / motorbike / car / bus / truck | <<YOLO26m>> | <<theo lớp, từ threshold_sweep>> | <<>> |
-| three_wheeler | <<YOLOE-26s, prompt: ...>> | <<>> | <<>> |
+| person / bicycle / motorbike / car / bus / OYOLO26n (--size n --imgsz 640, CPU)LO   _YOLO26n (--size n --imgsz 640, CPU)sw>r05: nhanh (0.33 s/ảnh), bắt được person 69 và motorbike 32 ở conf 0.25. conf 0.5 mất 41/69 person và 17/32 motorbike nên không dùng. Ngưỡng motorbike 0.15 từ threshold_sweep (recall 100%, precision 56%). person và car không đạt recall 90% (tối đa 88% và 86%) nên giữ mặc định. bicycle (4), bus (0), truck (1) dưới 5 vật gold nên không chọn ngưỡng riêng | <<>> |
+| three_wYOLOE-26s, prompt: tuk-tuk, cyclo, cargo tricyclept:>0.15> >r03: YOLO26 không có lớp này; YOLOE tìm đúng tuk-tuk img_002 (0.93) và 3 xích lô img_032. threshold_sweep: recall 100%, precision 67% (6 vật gold)> |Lệnh merge_prelabels.py: dán nguyên lệnh bạn chạy ở Part 4 (chưa chạy thì điền sau). Dự kiến:
+python scripts/merge_prelabels.py work/prelabel/yoloe_all/pre.coco.json work/prelabel/y26_all/pre.coco.json --thr "motorbike=0.15,three_wheeler=0.15" --conf 0.3 --iou 0.6 --split "batch,gold" --out work/prelabel/merged_review/pre.coco.json
+Phiên bản SAM: SAM 2.1 (sam2.1_b.pt). Lý do: cân bằng chất lượng và tốc độ; chạy được trên CPU (8.68 s/ảnh, chậm hơn YOLO26 khoảng 26 lần) nên chỉ dùng làm mask cho vài vật khó (Part 5), không pre-label hàng loạt; không cần token như SAM 3. Nếu bạn dùng bản khác thì sửa theo.
+Lỗi không sửa được bằng ngưỡng: YOLO26 thuộc danh mục COCO cố định nên không có three_wheeler: tuk-tuk img_002 không có box, xích lô img_032 bị gọi bicycle, xe ở mép img_011 bị gọi truck. Tăng hay giảm ngưỡng đều không đổi được. Cách sửa: dùng YOLOE gõ chữ cho lớp này, và người duyệt đổi nhãn tay.
+Box điểm cao mà sai, điểm thấp mà đúng: điểm cao mà sai: img_002, xe bán tải trắng bị gọi truck 0.73 (YOLO26); điểm thấp mà đúng: img_032, xích lô được YOLOE cho 0.48 và 0.27. Kiểm lại bằng viz của chính bạn trước khi chép vì số lấy từ cache yolo26m.
+Giới hạn: chỉ 4 ảnh gold, chọn ngưỡng và chấm trên cùng dữ liệu nên số lạc quan; lớp bus/truck/bicycle ít vật nên không có ngưỡng riêng. lạc quan: <<>>
 
-- Lệnh `merge_prelabels.py` đã dùng (dán nguyên): <<>>
-- **Phiên bản SAM bạn chọn** (SAM 1 / 2.1 / 3) và lý do: <<chất lượng mask, tốc độ, RAM, quyền truy cập>>
-- Lỗi nào **không sửa được bằng đổi ngưỡng** (ví dụ tuk-tuk bị gọi `car`)? Sửa thế nào? <<>>
-- Box **điểm cao mà sai** hoặc **điểm thấp mà đúng** (ảnh nào): <<>>
-- Giới hạn: chọn ngưỡng trên chính gold (4 ảnh) nên số đo máy trên gold là lạc quan: <<>>
-
-## 2. AI error profile (từ `qc/review_stats.md`)
+## 2. AI error profile (từ `qc/r03: YOLO26 không có lớp này; YOLOE tìm đúng tuk-tuk img_002 (0.93) và 3 xích lô img_032. threshold_sweep: recall 100%, precision 67% (6 vật gold)review_stats.md`)
 
 | Trạng thái | Số | Tỉ lệ | Mẫu số |
 |---|---|---|---|
