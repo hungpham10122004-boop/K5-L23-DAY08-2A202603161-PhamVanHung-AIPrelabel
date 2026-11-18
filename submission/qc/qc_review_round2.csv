@@ -1,0 +1,7 @@
+image,object_id,error_type,reviewer,note
+img_004.jpg,,khong,Ph?m V?n H�ng,ảnh sạch sau khi sửa vòng 1
+img_008.jpg,54,thua,Ph?m V?n H�ng,"three_wheeler 0.21 trùm chồng lên #57 và #56 vẫn còn, chưa xoá"
+img_008.jpg,,bo_sot,Ph?m V?n H�ng,"người phụ nữ phía sau quầy dưa (khoảng x705,y225) chưa có box person; box person 0.32 cũ ở đó đã bị xoá"
+img_018.jpg,,bo_sot,Ph?m V?n H�ng,"cụm xe máy có người lái ở giữa đường (khoảng x530-720,y380-410) chưa có box; cụm nhỏ thì dùng ignore_region, vật cao từ 20 px thì vẽ từng xe"
+img_022.jpg,,khong,Ph?m V?n H�ng,ảnh sạch sau khi sửa vòng 1
+img_031.jpg,244,sai_vi_tri_kich_thuoc,Ph?m V?n H�ng,box person dừng ở y≈445 trong khi chân người còn kéo xuống đáy ảnh (khoảng y≈680); cần kéo box xuống
