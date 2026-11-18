@@ -1,7 +1,9 @@
 image,object_id,error_type,reviewer,note
-img_004.jpg,,khong,Phạm Văn Hùng,ảnh sạch sau khi sửa vòng 1
-img_008.jpg,54,thua,Phạm Văn Hùng,"three_wheeler 0.21 trùm chồng lên #57 và #56 vẫn còn, chưa xoá"
-img_008.jpg,,bo_sot,Phạm Văn Hùng,"người phụ nữ phía sau quầy dưa (khoảng x705,y225) chưa có box person; box person 0.32 cũ ở đó đã bị xoá"
-img_018.jpg,,bo_sot,Phạm Văn Hùng,"cụm xe máy có người lái ở giữa đường (khoảng x530-720,y380-410) chưa có box; cụm nhỏ thì dùng ignore_region, vật cao từ 20 px thì vẽ từng xe"
-img_022.jpg,,khong,Phạm Văn Hùng,ảnh sạch sau khi sửa vòng 1
-img_031.jpg,244,sai_vi_tri_kich_thuoc,Phạm Văn Hùng,box person dừng ở y≈445 trong khi chân người còn kéo xuống đáy ảnh (khoảng y≈680); cần kéo box xuống
+img_010.jpg,68,thua,Phạm Văn Hùng,"#68 (0.71) và #74 (0.92) cùng nằm trên một xích lô phía trước, mỗi box chỉ bao một phần; nên giữ một box bao cả xe từ mui đến bánh"
+img_024.jpg,,bo_sot,Phạm Văn Hùng,"xe buýt lớn màu xanh lá bên phải (khoảng x745-1024,y335-550) chưa có box bus"
+img_024.jpg,,bo_sot,Phạm Văn Hùng,"nhiều ô tô chưa có box: cột xe bên trái (khoảng x100-260,y80-260) và vài xe bên phải (khoảng x850-1010,y295-345)"
+img_024.jpg,,bo_sot,Phạm Văn Hùng,"đám xe máy bị nhoè do phơi sáng dài ở phía dưới và bên phải chưa có ignore_region (guideline: mờ, không tách được từng cá thể)"
+img_026.jpg,,bo_sot,Phạm Văn Hùng,"người đứng ở giữa ảnh (khoảng x490,y345) chưa có box person"
+img_026.jpg,,bo_sot,Phạm Văn Hùng,"nhiều xe máy đỗ sát nhau ở giữa và xa (khoảng x400-760,y330-480) chưa có box hoặc ignore_region (câu hỏi mở số 2 của guideline v1.0)"
+img_027.jpg,200,thua,Phạm Văn Hùng,box car cao 17.1 px (< 20 px) theo cảnh báo validate_labels; vật quá nhỏ không vẽ riêng
+img_028.jpg,,bo_sot,Phạm Văn Hùng,"người đội mũ trắng đeo khẩu trang ở mép trái (khoảng x30-70,y370-430) chưa có box person; ảnh rất dày, cần kiểm thêm các người ở hàng sau"
