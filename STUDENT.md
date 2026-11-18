@@ -5,7 +5,7 @@
 - Lớp (L2 / L3 / khác): L2A
 - Tài khoản GitHub: https://github.com/hungpham10122004-boop
 - Repo bài nộp (URL): https://github.com/hungpham10122004-boop/K5-L23-Day08-PhamVanHung-AI-Assisted-Labeling
-- Commit chốt bài (hash): CHƯA_ĐIỀN
+- Commit chốt bài (hash): c6dd642
 - Máy: Windows, không có GPU (chạy CPU)
 - CVAT (Docker): 2.74.1
 
