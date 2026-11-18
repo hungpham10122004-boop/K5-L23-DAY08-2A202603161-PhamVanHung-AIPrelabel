@@ -2,7 +2,7 @@
   <img src="docs/assets/hero.png" alt="Day 08 Lab: AI hỗ trợ gán nhãn" width="100%">
 </p>
 
-# Day 08 Lab - Phạm Văn Hùngw
+# Day 08 Lab — 2A202603161 - Phạm Văn Hùng
 
 <p align="center">
   <img alt="cá nhân" src="https://img.shields.io/badge/lab-cá%20nhân-0b1f3a">
